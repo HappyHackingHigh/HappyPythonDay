@@ -37,7 +37,7 @@ Python程式與資訊安全實戰
 
 [B5]Python函數技術
 ```
-# PART II: Python 4 CTF--A simple and quick begins
+# PART II: PYTHON4CTF--A simple and quick begins
 
 >* 使用PYTHON 內建函數與標準函數庫[只要import就可使用]
 >* 使用PYTHON 第三方套件[要安裝然後再import使用]
