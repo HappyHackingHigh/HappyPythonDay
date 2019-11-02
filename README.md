@@ -37,6 +37,11 @@ Python程式與資訊安全實戰
 
 [B5]Python函數技術
 ```
+```
+NEXT
+[B6]Python物件導向技術
+[B7]Python檔案與文件存取技術
+```
 # PART II: PYTHON4CTF--A simple and quick begins
 
 >* 使用PYTHON 內建函數與標準函數庫[只要import就可使用]
@@ -54,4 +59,9 @@ Python程式與資訊安全實戰
 ### [E*].Python現代密碼實戰
 ```
 
+```
+
+# Python * Security 兩天課程
+```
+2020年
 ```
