@@ -26,8 +26,10 @@ Python程式與資訊安全實戰
 ```
 [B1]輸入與輸出+格式化輸出: input()與print()
 [B2]眾多資料型態(data Type)及其各種運算
+
 [B3]程式流程之選擇(selection)|決策(Decision)=== if | if else | if elsif elsif 
 [B4]程式流程之迴圈(loop) ==== range() | For loop | while loop | break vs continue
+
 [B5]Python函數技術
 ```
 # PART II: Python 4 CTF--A simple and quick begins
