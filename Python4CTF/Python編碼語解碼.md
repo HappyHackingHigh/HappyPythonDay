@@ -304,10 +304,11 @@ print (result)
 # Executes the main function 
 #if __name__ == '__main__': 
 #    main()
-
-"""# 編碼與解碼102
+```
+# 編碼與解碼102
 
 # angstromCTF 2016 : what-the-hex 20
+```
 """
 
 '6236343a20615735305a584a755a58526659323975646d567963326c76626c3930623239736331397962324e72'.decode("hex")
@@ -356,8 +357,8 @@ print("For 0o12, int is:", int('0o12', 8))
 # hexadecimal
 print("For A, int is:", int('A', 16))
 print("For 0xA, int is:", int('0xA', 16))
-
-"""## Internetwache CTF 2016 : The hidden message
+```
+## Internetwache CTF 2016 : The hidden message
 
 ```
 0000000 126 062 126 163 142 103 102 153 142 062 065 154 111 121 157 113
@@ -368,28 +369,26 @@ print("For 0xA, int is:", int('0xA', 16))
 ```
 
 ## 第一種解法:使用線上工具解
-
+```
 步驟一：線上工具
 
 http://www.unit-conversion.info/texttools/octal/
 
 V2VsbCBkb25lIQoKRmxhZzogSVd7TjBfMG5lX2Nhbl9zdDBwX3kwdX0K
-
+```
 ### 步驟二：
-"""
-
+```
 import base64
 
 encoded_data = b'V2VsbCBkb25lIQoKRmxhZzogSVd7TjBfMG5lX2Nhbl9zdDBwX3kwdX0K'
 decoded_data = base64.b64decode(encoded_data)
 print('Encoded :', encoded_data)
 print('Decoded :', decoded_data)
-
-"""## 第二種解法
+```
+## 第二種解法
 
 ### 先試看看是不是如你所想的一般.......
-"""
-
+```
 #!/usr/bin/python
 
 c = '126 062 126 163 142 103 102 153 142 062 065 154 111 121 157 113 122 155 170 150 132 172 157 147 123 126 144 067 124 152 102 146 115 107 065 154 130 062 116 150 142 154 071 172 144 104 102 167 130 063 153 167 144 130 060 113 012'
@@ -400,9 +399,9 @@ for _ in c.split(' '):
   flag += chr(int(_,8))
 
 print(flag)
-
+```
 """## 接著就可以完成大業......"""
-
+```
 #!/usr/bin/python
 import base64
 
@@ -416,9 +415,9 @@ for _ in c.split(' '):
 
 solution = base64.b64decode(flag)
 print(solution)
-
-"""# SECCON CTF 2014: Easy Cipher 
-
+```
+## SECCON CTF 2014: Easy Cipher 
+```
 https://github.com/S42X/CTF/blob/master/SECCON/EasyCipher.md
 """
 
@@ -436,7 +435,6 @@ http://mini-stable.blogspot.com/2015/03/python-int-hex-char-string.html
 
 ### Python - int, hex, char, string的轉換
 
-```
 Int to Hex:   hex(97)  # '0x61'
 Int to Char:   chr(97)  # 'a'
 Int to String:  str(97)  # '97'
@@ -455,28 +453,30 @@ String to Hex:
 string = 'abcd'
 ''.join([hex(ord(x))[2:] for x in string])  # '61626364'
 ```
-"""
 
+```
 string = '61626364'
 ''.join(chr(int(string[i:i+2], 16)) for i in range(0, len(string), 2))  # 'abcd'
-
-"""### binascii
-
+```
+### 使用python內建模組 binascii
+```
 https://docs.python.org/2/library/binascii.html
-"""
-
+```
+```
 #coding:utf-8
 import binascii
 a = 'HappyCTF{Useful tools binascii}'
 b = binascii.b2a_hex(a)
 print b
 print binascii.a2b_hex(b)
-
+```
+```
 """binascii
 
 binascii.unhexlify
 """
-
+```
+```
 #!/usr/bin/python
 import binascii
 
@@ -544,7 +544,8 @@ I want you to decrypt this encrypted flag he gave me.
 附檔已整理在
 
 https://raw.githubusercontent.com/easyctf/easyctf-2017-problems/master/decode-me/encrypted_flag.txt
-"""
+
+```
 ```
 !wget https://raw.githubusercontent.com/easyctf/easyctf-2017-problems/master/decode-me/encrypted_flag.txt
 
