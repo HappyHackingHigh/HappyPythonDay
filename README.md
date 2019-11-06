@@ -48,24 +48,14 @@ NEXT
 >* 使用PYTHON 第三方套件[要安裝然後再import使用]
 
 ### [C].Python編碼與解碼實戰
-```
-
-```
 
 ### [D].Python古典密碼實戰
-```
 
-```
 ### [E*].Python現代密碼實戰
-```
 
-```
 
 # Python * Security 兩天課程
 ```
 2020年
 ```
-# CTF解題
-```
-https://0x90r00t.com/
-```
+
