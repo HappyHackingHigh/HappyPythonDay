@@ -2,7 +2,7 @@
 ```
 學習目標:
 [1]使用Python程式與內建函數進行ASCII的編碼與解碼
-[2]使用Python標準函式庫進行BASE64的編碼與解碼
+[2]使用Python標準函式庫(Base 64模組)進行BASE64的編碼與解碼
 ```
 # 編碼與解碼101
 
@@ -156,17 +156,17 @@ base64.b64decode('aW50ZXJuZXRfY29udmVyc2lvbl90b29sc19yb2Nr')
 
 ```
 
-##  Python Built in Functions(內建的函數)
+###  Python Built in Functions(內建的函數)
 
-
-https://www.w3schools.com/python/python_ref_functions.asp
 ```
+https://www.w3schools.com/python/python_ref_functions.asp
+
 bin()
 oct()
 int()
 hex()
 ```
-### Python Program to Convert Decimal to Binary, Octal and Hexadecimal
+### 使用Python程式將10進位(Decimal)數字轉換成二進位(binary), 八進位(Octal) 及 十六進位(Hexadecimal) 數字系統( number system)
 
 https://www.programiz.com/python-programming/examples/conversion-binary-octal-hexadecimal
 """
@@ -176,9 +176,8 @@ https://www.programiz.com/python-programming/examples/conversion-binary-octal-he
 # Change this line for a different result
 dec = 344
 
-p
-rint("The decimal value of",dec,"is:")
-print(bin(dec),"in binary.")
+print("10進位數字",dec,"可被轉換成:")
+print(bin(dec),"二進位(binary).")
 print(oct(dec),"in octal.")
 print(hex(dec),"in hexadecimal.")
 
