@@ -343,14 +343,16 @@ oct(10)
 
 hex(10)
 
-"""https://www.quora.com/How-do-I-convert-hex-into-a-string-using-Python
+```
+```
+https://www.quora.com/How-do-I-convert-hex-into-a-string-using-Python
 
 https://stackoverflow.com/questions/18806772/most-pythonic-way-to-convert-a-string-to-a-octal-number
 
 http://mini-stable.blogspot.com/2015/03/python-int-hex-char-string.html
-
+```
 ### Python - int, hex, char, string的轉換
-
+```
 Int to Hex:   hex(97)  # '0x61'
 Int to Char:   chr(97)  # 'a'
 Int to String:  str(97)  # '97'
