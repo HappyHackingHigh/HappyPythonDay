@@ -136,42 +136,27 @@ print('Encoded :', encoded_data)
 decoded_data = base64.b32decode(encoded_data)
 print('Decoded :', decoded_data)
 ```
-## 使用Pyhon程式解Crytpo 101: Base64及Base32哪兩題
-
-## Base 64 模組編碼與解碼趣味遊戲
-
-## 雙重編碼(Doubly decoded)
-```
-import base64
-
-data =b'BreakAllCTF{HappyPythonDay}'
-encoded_data = base64.b64encode(data)
-encoded_data2 = base64.b64encode(encoded_data)
-
-print('Original Data :', data)
-print('Encoded :', encoded_data)
-print('Doubly Encoded :', encoded_data2)
-
-decoded_data = base64.b64decode(encoded_data2)
-result = base64.b64decode(decoded_data)
-print(result)
-```
+### [作業] 使用Pyhon程式解Crytpo 101: Base64及Base32哪兩題
 
 # 編碼與解碼102
 
 # angstromCTF 2016 : what-the-hex 20
+
+### 先試看看
 ```
-"""
-
+#
 '6236343a20615735305a584a755a58526659323975646d567963326c76626c3930623239736331397962324e72'.decode("hex")
-
+```
+```
 import base64
 
 '6236343a20615735305a584a755a58526659323975646d567963326c76626c3930623239736331397962324e72'.decode("hex")
 
 base64.b64decode('aW50ZXJuZXRfY29udmVyc2lvbl90b29sc19yb2Nr')
 
-"""##  Python Built in Functions(內建的函數)
+```
+
+##  Python Built in Functions(內建的函數)
 
 
 https://www.w3schools.com/python/python_ref_functions.asp
@@ -191,7 +176,8 @@ https://www.programiz.com/python-programming/examples/conversion-binary-octal-he
 # Change this line for a different result
 dec = 344
 
-print("The decimal value of",dec,"is:")
+p
+rint("The decimal value of",dec,"is:")
 print(bin(dec),"in binary.")
 print(oct(dec),"in octal.")
 print(hex(dec),"in hexadecimal.")
@@ -443,6 +429,24 @@ print(b64_3)
 ```
 # [進階主題]
 
+## Base 64 模組編碼與解碼趣味遊戲
+
+## 雙重編碼(Doubly decoded)
+```
+import base64
+
+data =b'BreakAllCTF{HappyPythonDay}'
+encoded_data = base64.b64encode(data)
+encoded_data2 = base64.b64encode(encoded_data)
+
+print('Original Data :', data)
+print('Encoded :', encoded_data)
+print('Doubly Encoded :', encoded_data2)
+
+decoded_data = base64.b64decode(encoded_data2)
+result = base64.b64decode(decoded_data)
+print(result)
+```
 ### 自己的CTF自己出:
 ```
 答案是BreakAllCTF{HappyPythonDay!A-LO_HA}
