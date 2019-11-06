@@ -187,7 +187,6 @@ print(x)
 increase()
 increase()
 print(x)
-
 ```
 
 # 遞迴函式 ==> recursive vs iterative(loop)
@@ -228,7 +227,7 @@ def fib(n):
 
 print(fib(10))
 ```
-#### 方法二:使用 iterative"""
+#### 方法二:使用 iterative
 ```
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
@@ -241,6 +240,7 @@ def fib(n):
  
 print(fib(10))
 ```
+
 ###【Python 練習實例28】
 
 ```
@@ -254,9 +254,9 @@ print(fib(10))
 ```
 
 ###  問題:要如何知道函數被呼叫的次數??
-
+```
 遞迴函式的呼叫次數==>全域變數的應用
-"""
+
 
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
@@ -279,28 +279,32 @@ def testFib(n):
 
 testFib(4)
 
-"""# Python內建函數==>Built-in Functions:
+```
+
+# Python內建函數==>Built-in Functions:
 
 ```
 https://docs.python.org/2/library/functions.html
 https://www.programiz.com/python-programming/methods/built-in
 ```
 
-### hex(x):Convert an integer number to a lowercase hexadecimal string prefixed with “0x”
-"""
+### hex(x):Convert an integer number to a lowercase hexadecimal string prefixed with "0x"
+```
 
 hex(255)
 
 hex(-42)
 
-"""### oct(x):Convert an integer number to an octal string prefixed with “0o”"""
-
+```
+### oct(x):Convert an integer number to an octal string prefixed with "0o"
+```
 oct(8)
 
 oct(-56)
 
-"""### bin(x):Convert an integer number to a binary string prefixed with “0b”"""
-
+```
+### bin(x):Convert an integer number to a binary string prefixed with "0b"
+```
 bin(3)
 
 bin(-10)
