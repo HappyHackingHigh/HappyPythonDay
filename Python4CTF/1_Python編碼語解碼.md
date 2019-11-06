@@ -1,15 +1,16 @@
-# Python實戰 CTF::Python編碼語解碼
-
-# 編碼與解碼101
+# Python實戰 CTF::使用Python編碼與解碼
 ```
-# -*- coding: utf-8 -*-
+學習目標:
+[1]使用Python程式與內建函數進行ASCII的編碼與解碼
+[2]使用Python標準函式庫進行BASE64的編碼與解碼
+```
+# 編碼與解碼101
 
-## ASCII Code--- Python
+## 使用Python程式與內建函數進行ASCII的編碼與解碼
 
 ### Python Built in Functions(內建的函數):chr()與ord
-
+```
 https://docs.python.org/3/library/functions.html
-"""
 
 chr(97)
 
@@ -19,9 +20,11 @@ chr(66)
 #print(bin(ord('a')))
 #oct(ord('a'))
 print(hex(ord('a')))
+```
+### 編碼與解碼 101---ASCII編碼解題
 
-"""### 編碼與解碼 101     ASCII"""
-
+### 字串的分割
+```
 a="66 114".split("")
 a
 
@@ -30,24 +33,23 @@ a
 
 a="66 114".split(" ")
 a
-
-"""why int(x)???
-
-split(" ")???????????
-"""
-
+type(a)
+```
+### 把每一個分割後的字串==轉成整數後===再編碼出ASCII的字
+```
 a="66 114".split(" ")
 
 result=''
 
 for x in a:
-#  print(chr(int(x)))
   y=chr(int(x))
-#  y
   result += y
 # result = result + y 
-result
 
+result
+```
+### 最後的解答
+```
 #!/usr/bin/python
 
 c = '66 114 101 97 107 65 76 76 67 84 70 123 65 109 118 48 117 68 121 101 114 118 80 116 109 86 114 57 83 83 83 75 125'
@@ -58,7 +60,8 @@ for _ in c.split(' '):
   flag += chr(int(_))
 
 print(flag)
-
+```
+```
 #!/usr/bin/python
 
 c = '66 114 101 97 107 65 76 76 67 84 70 123 65 109 118 48 117 68 121 101 114 118 80 116 109 86 114 57 83 83 83 75 125'
@@ -69,16 +72,16 @@ for x in c.split(' '):
   flag += chr(int(x))
 
 print(flag)
-
-"""### 自己的CTF自己出:
-
+```
+### 自己的CTF自己出:
+```
 答案是BreakAllCTF{HappyPythonDay!A-LO_HA}
 
 BreakALLCTF{HappyPythonDay}
 
 請提供數字要學員解答
-"""
-
+```
+```
 s = 'BreakALLCTF{HappyPythonDay}'
 
 #result = ''
@@ -86,9 +89,10 @@ for _ in s:
 #  result += ord(_)
 #  result
   print(ord(_))
+```
 
-"""### 答案要以二進位(bin)八進位(oct)十六進位(hex)表示"""
-
+### 答案要以二進位(bin)八進位(oct)十六進位(hex)表示
+```
 s = 'BreakALLCTF{HappyPythonDay}'
 
 #result = ''
@@ -98,7 +102,9 @@ for _ in s:
   print(bin(ord(_)))
 #print(oct(ord(_)))
 #print(hex(ord(_)))
-
+```
+### 試分析看看底下程式的意義
+```
 #!/usr/bin/python
 import base64
 
@@ -110,19 +116,24 @@ for _ in c.split(' '):
    flag2 += chr(int(_,2))
     
 flag2
+```
+```
+c = '0b1000010'
+flag = chr(int(c,2))
+flag
+```
+## 使用Python標準函式庫進行BASE64的編碼與解碼
 
-"""###  Python 標準函式庫 (Standard Library)
-
-
+###  Python 標準函式庫 (Standard Library)
+```
 C++ 有強大的標準模板庫(Standard Template Library，STL）
 
 Python也有強大的標準函式庫 (Standard Library)
 
 本課程示範幾個範例,帶你認識Python 標準函式庫
 
-### 推薦書籍與資源
+推薦書籍與資源
 
-```
 [1]官方說明
 英文 https://docs.python.org/3/library/
 中文 https://docs.python.org/zh-tw/3/library/index.html
@@ -134,36 +145,34 @@ Doug Hellmann
 
 https://pymotw.com/3/
 https://bitbucket.org/dhellmann/pymotw-3/src/master/
-
 ```
 
 ## Base 64 模組
-
+```
 What does the 'b' character do in front of a string literal?
 
 https://stackoverflow.com/questions/6269765/what-does-the-b-character-do-in-front-of-a-string-literal
-
+```
 ### 使用Base 64 模組編碼:b64encode()
-"""
-
+```
 import base64
 
 data =b'BreakAllCTF{HappyPythonDay}'
 encoded_data = base64.b64encode(data)
 print('Original Data :', data)
 print('Encoded :', encoded_data)
-
-"""### 使用Base 64 模組解碼:b64decode()"""
-
+```
+### 使用Base 64 模組解碼:b64decode()
+```
 import base64
 
 encoded_data = b'QnJlYWtBTExDVEZ7NTN1c1pRM2hXVzI1ZGNoWjdkWGV9'
 decoded_data = base64.b64decode(encoded_data)
 print('Encoded :', encoded_data)
 print('Decoded :', decoded_data)
-
-"""### Base 32編碼與解碼"""
-
+```
+### 使用Base 64 模組也可以進行Base 32編碼與解碼
+```
 import base64
 
 original_data = b'BreakAllCTF{HappyPythonDay}'
@@ -174,19 +183,19 @@ print('Encoded :', encoded_data)
 
 decoded_data = base64.b32decode(encoded_data)
 print('Decoded :', decoded_data)
-
-"""## 使用Pyhon程式解Crytpo 101: Base64及Ｂase32哪兩題
+```
+## 使用Pyhon程式解Crytpo 101: Base64及Ｂase32哪兩題
 
 ## Base 64 模組編碼與解碼趣味遊戲
 
-## Ｄoubly decoded
-"""
-
+## 雙重編碼(Doubly decoded)
+```
 import base64
 
 data =b'BreakAllCTF{HappyPythonDay}'
 encoded_data = base64.b64encode(data)
 encoded_data2 = base64.b64encode(encoded_data)
+
 print('Original Data :', data)
 print('Encoded :', encoded_data)
 print('Doubly Encoded :', encoded_data2)
@@ -194,117 +203,8 @@ print('Doubly Encoded :', encoded_data2)
 decoded_data = base64.b64decode(encoded_data2)
 result = base64.b64decode(decoded_data)
 print(result)
-
-"""## 參考底下程式,完成 Crypto 101:Morse code
-
-Morse Code Translator In Python
-
-https://www.geeksforgeeks.org/morse-code-translator-python/
-"""
-
-# Python program to implement Morse Code Translator 
-  
-''' 
-VARIABLE KEY 
-'cipher' -> 'stores the morse translated form of the english string' 
-'decipher' -> 'stores the english translated form of the morse string' 
-'citext' -> 'stores morse code of a single character' 
-'i' -> 'keeps count of the spaces between morse characters' 
-'message' -> 'stores the string to be encoded or decoded' 
-'''
-  
-# Dictionary representing the morse code chart 
-MORSE_CODE_DICT = { 'A':'.-', 'B':'-...', 
-                    'C':'-.-.', 'D':'-..', 'E':'.', 
-                    'F':'..-.', 'G':'--.', 'H':'....', 
-                    'I':'..', 'J':'.---', 'K':'-.-', 
-                    'L':'.-..', 'M':'--', 'N':'-.', 
-                    'O':'---', 'P':'.--.', 'Q':'--.-', 
-                    'R':'.-.', 'S':'...', 'T':'-', 
-                    'U':'..-', 'V':'...-', 'W':'.--', 
-                    'X':'-..-', 'Y':'-.--', 'Z':'--..', 
-                    '1':'.----', '2':'..---', '3':'...--', 
-                    '4':'....-', '5':'.....', '6':'-....', 
-                    '7':'--...', '8':'---..', '9':'----.', 
-                    '0':'-----', ', ':'--..--', '.':'.-.-.-', 
-                    '?':'..--..', '/':'-..-.', '-':'-....-', 
-                    '(':'-.--.', ')':'-.--.-'} 
-  
-# Function to encrypt the string 
-# according to the morse code chart 
-def encrypt(message): 
-    cipher = '' 
-    for letter in message: 
-        if letter != ' ': 
-  
-            # Looks up the dictionary and adds the 
-            # correspponding morse code 
-            # along with a space to separate 
-            # morse codes for different characters 
-            cipher += MORSE_CODE_DICT[letter] + ' '
-        else: 
-            # 1 space indicates different characters 
-            # and 2 indicates different words 
-            cipher += ' '
-  
-    return cipher 
-  
-# Function to decrypt the string 
-# from morse to english 
-def decrypt(message): 
-  
-    # extra space added at the end to access the 
-    # last morse code 
-    message += ' '
-  
-    decipher = '' 
-    citext = '' 
-    for letter in message: 
-  
-        # checks for space 
-        if (letter != ' '): 
-  
-            # counter to keep track of space 
-            i = 0
-  
-            # storing morse code of a single character 
-            citext += letter 
-  
-        # in case of space 
-        else: 
-            # if i = 1 that indicates a new character 
-            i += 1
-  
-            # if i = 2 that indicates a new word 
-            if i == 2 : 
-  
-                 # adding space to separate words 
-                decipher += ' '
-            else: 
-  
-                # accessing the keys using their values (reverse of encryption) 
-                decipher += list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT 
-                .values()).index(citext)] 
-                citext = '' 
-  
-    return decipher 
-  
-# Hard-coded driver function to run the program 
-#def main(): 
-    
-#message = "BreakAllCTF{HappyPythonDay}"
-message = "HappyPythonDay"
-result = encrypt(message.upper()) 
-print (result) 
-  
-message = ".... .- .--. .--. -.-- .--. -.-- - .... --- -. -.. .- -.--"
-result = decrypt(message) 
-print (result) 
-  
-# Executes the main function 
-#if __name__ == '__main__': 
-#    main()
 ```
+
 # 編碼與解碼102
 
 # angstromCTF 2016 : what-the-hex 20
@@ -588,4 +488,122 @@ b64_2 = str(base64.standard_b64decode(b64),'utf-8')
 
 b64_3 = str(base64.standard_b64decode(b64),'utf-8')
 print(b64_3)
+```
+## [進階主題]參考底下程式,完成 Crypto 101:Morse code
+```
+Morse Code Translator In Python
+
+https://www.geeksforgeeks.org/morse-code-translator-python/
+```
+### Python program to implement Morse Code Translator 
+```
+"""
+VARIABLE KEY 
+'cipher' -> 'stores the morse translated form of the english string' 
+'decipher' -> 'stores the english translated form of the morse string' 
+'citext' -> 'stores morse code of a single character' 
+'i' -> 'keeps count of the spaces between morse characters' 
+'message' -> 'stores the string to be encoded or decoded' 
+"""
+  
+# 使用字典(Dictionary)資料型態來表達 morse 編碼 
+MORSE_CODE_DICT = { 'A':'.-', 'B':'-...', 
+                    'C':'-.-.', 'D':'-..', 'E':'.', 
+                    'F':'..-.', 'G':'--.', 'H':'....', 
+                    'I':'..', 'J':'.---', 'K':'-.-', 
+                    'L':'.-..', 'M':'--', 'N':'-.', 
+                    'O':'---', 'P':'.--.', 'Q':'--.-', 
+                    'R':'.-.', 'S':'...', 'T':'-', 
+                    'U':'..-', 'V':'...-', 'W':'.--', 
+                    'X':'-..-', 'Y':'-.--', 'Z':'--..', 
+                    '1':'.----', '2':'..---', '3':'...--', 
+                    '4':'....-', '5':'.....', '6':'-....', 
+                    '7':'--...', '8':'---..', '9':'----.', 
+                    '0':'-----', ', ':'--..--', '.':'.-.-.-', 
+                    '?':'..--..', '/':'-..-.', '-':'-....-', 
+                    '(':'-.--.', ')':'-.--.-'} 
+  
+# 定義morse 編碼的函數 
+def encrypt(message): 
+    cipher = '' 
+    for letter in message: 
+        if letter != ' ': 
+  
+            # Looks up the dictionary and adds the 
+            # correspponding morse code 
+            # along with a space to separate 
+            # morse codes for different characters 
+            cipher += MORSE_CODE_DICT[letter] + ' '
+        else: 
+            # 1 space indicates different characters 
+            # and 2 indicates different words 
+            cipher += ' '
+  
+    return cipher 
+
+# 定義morse 解碼的函數   
+def decrypt(message): 
+  
+    # extra space added at the end to access the 
+    # last morse code 
+    message += ' '
+  
+    decipher = '' 
+    citext = '' 
+    for letter in message: 
+  
+        # checks for space 
+        if (letter != ' '): 
+  
+            # counter to keep track of space 
+            i = 0
+  
+            # storing morse code of a single character 
+            citext += letter 
+  
+        # in case of space 
+        else: 
+            # if i = 1 that indicates a new character 
+            i += 1
+  
+            # if i = 2 that indicates a new word 
+            if i == 2 : 
+  
+                 # adding space to separate words 
+                decipher += ' '
+            else: 
+  
+                # accessing the keys using their values (reverse of encryption) 
+                decipher += list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT 
+                .values()).index(citext)] 
+                citext = '' 
+  
+    return decipher 
+  
+# 
+
+message = "HappyPythonDay"
+result = encrypt(message.upper()) 
+print (result) 
+  
+message = ".... .- .--. .--. -.-- .--. -.-- - .... --- -. -.. .- -.--"
+result = decrypt(message) 
+print (result) 
+```
+```
+# Hard-coded driver function to run the program 
+def main(): 
+    
+#message = "BreakAllCTF{HappyPythonDay}"
+message = "HappyPythonDay"
+result = encrypt(message.upper()) 
+print (result) 
+  
+message = ".... .- .--. .--. -.-- .--. -.-- - .... --- -. -.. .- -.--"
+result = decrypt(message) 
+print (result) 
+  
+# Executes the main function 
+if __name__ == '__main__': 
+   main()
 ```
