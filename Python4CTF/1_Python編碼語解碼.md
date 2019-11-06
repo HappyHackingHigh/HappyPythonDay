@@ -73,55 +73,7 @@ for x in c.split(' '):
 
 print(flag)
 ```
-### 自己的CTF自己出:
-```
-答案是BreakAllCTF{HappyPythonDay!A-LO_HA}
 
-BreakALLCTF{HappyPythonDay}
-
-請提供數字要學員解答
-```
-```
-s = 'BreakALLCTF{HappyPythonDay}'
-
-#result = ''
-for _ in s:
-#  result += ord(_)
-#  result
-  print(ord(_))
-```
-
-### 答案要以二進位(bin)八進位(oct)十六進位(hex)表示
-```
-s = 'BreakALLCTF{HappyPythonDay}'
-
-#result = ''
-for _ in s:
-#  result += ord(_)
-#  result
-  print(bin(ord(_)))
-#print(oct(ord(_)))
-#print(hex(ord(_)))
-```
-### 試分析看看底下程式的意義
-```
-#!/usr/bin/python
-import base64
-
-c = '0b1000010 0b1110010 0b1100101 0b1100001 0b1101011 0b1000001 0b1001100 0b1001100 0b1000011 0b1010100 0b1000110 0b1111011 0b1001000 0b1100001 0b1110000 0b1110000 0b1111001 0b1010000 0b1111001 0b1110100 0b1101000 0b1101111 0b1101110 0b1000100 0b1100001 0b1111001 0b1111101'
-
-
-flag2 = ''
-for _ in c.split(' '):
-   flag2 += chr(int(_,2))
-    
-flag2
-```
-```
-c = '0b1000010'
-flag = chr(int(c,2))
-flag
-```
 ## 使用Python標準函式庫進行BASE64的編碼與解碼
 
 ###  Python 標準函式庫 (Standard Library)
@@ -489,7 +441,58 @@ b64_2 = str(base64.standard_b64decode(b64),'utf-8')
 b64_3 = str(base64.standard_b64decode(b64),'utf-8')
 print(b64_3)
 ```
-## [進階主題]參考底下程式,完成 Crypto 101:Morse code
+# [進階主題]
+
+### 自己的CTF自己出:
+```
+答案是BreakAllCTF{HappyPythonDay!A-LO_HA}
+
+BreakALLCTF{HappyPythonDay}
+
+請提供數字要學員解答
+```
+```
+s = 'BreakALLCTF{HappyPythonDay}'
+
+#result = ''
+for _ in s:
+#  result += ord(_)
+#  result
+  print(ord(_))
+```
+
+### 答案要以二進位(bin)八進位(oct)十六進位(hex)表示
+```
+s = 'BreakALLCTF{HappyPythonDay}'
+
+#result = ''
+for _ in s:
+#  result += ord(_)
+#  result
+  print(bin(ord(_)))
+#print(oct(ord(_)))
+#print(hex(ord(_)))
+```
+### 試分析看看底下程式的意義
+```
+#!/usr/bin/python
+import base64
+
+c = '0b1000010 0b1110010 0b1100101 0b1100001 0b1101011 0b1000001 0b1001100 0b1001100 0b1000011 0b1010100 0b1000110 0b1111011 0b1001000 0b1100001 0b1110000 0b1110000 0b1111001 0b1010000 0b1111001 0b1110100 0b1101000 0b1101111 0b1101110 0b1000100 0b1100001 0b1111001 0b1111101'
+
+
+flag2 = ''
+for _ in c.split(' '):
+   flag2 += chr(int(_,2))
+    
+flag2
+```
+```
+c = '0b1000010'
+flag = chr(int(c,2))
+flag
+```
+### 參考底下程式,完成 Crypto 101:Morse code
 ```
 Morse Code Translator In Python
 
