@@ -184,7 +184,7 @@ print('Encoded :', encoded_data)
 decoded_data = base64.b32decode(encoded_data)
 print('Decoded :', decoded_data)
 ```
-## 使用Pyhon程式解Crytpo 101: Base64及Ｂase32哪兩題
+## 使用Pyhon程式解Crytpo 101: Base64及Base32哪兩題
 
 ## Base 64 模組編碼與解碼趣味遊戲
 
