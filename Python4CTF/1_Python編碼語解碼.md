@@ -8,7 +8,7 @@
 
 ## 使用Python程式與內建函數進行ASCII的編碼與解碼
 
-### Python Built in Functions(內建的函數):chr()與ord
+### Python 內建函數(Built in Functions):chr()與ord()
 ```
 https://docs.python.org/3/library/functions.html
 
@@ -61,6 +61,7 @@ for _ in c.split(' '):
 
 print(flag)
 ```
+#### 
 ```
 #!/usr/bin/python
 
@@ -99,7 +100,7 @@ https://pymotw.com/3/
 https://bitbucket.org/dhellmann/pymotw-3/src/master/
 ```
 
-## Base 64 模組
+## Python 標準函式庫的Base 64 模組
 ```
 What does the 'b' character do in front of a string literal?
 
@@ -140,23 +141,73 @@ print('Decoded :', decoded_data)
 
 # 編碼與解碼102
 
-# angstromCTF 2016 : what-the-hex 20
-
-### 先試看看
+## angstromCTF 2016 : what-the-hex 20
 ```
-#
+Decode using hex and see what you get...
+6236343a20615735305a584a755a58526659323975646d567963326c76626c3930623239736331397962324e72
+```
+
+### 先試看看[底下程式要在Python 2 才會正常執行]
+
+步驟一:先將十六進位的數字轉成文字
+```
 '6236343a20615735305a584a755a58526659323975646d567963326c76626c3930623239736331397962324e72'.decode("hex")
 ```
+```
+'b64: aW50ZXJuZXRfY29udmVyc2lvbl90b29sc19yb2Nr'
+```
+步驟二:將獲得的文字再使用base 64解碼
 ```
 import base64
-
-'6236343a20615735305a584a755a58526659323975646d567963326c76626c3930623239736331397962324e72'.decode("hex")
-
 base64.b64decode('aW50ZXJuZXRfY29udmVyc2lvbl90b29sc19yb2Nr')
-
+```
+### Python 3的寫法[使用 標準函式庫的binascii模組]
+```
+binascii模組包含很多用來方法來轉換二進位制和各種ASCII編碼的二進位制表示法
+更多說明請參閱:
+https://docs.python.org/zh-cn/3/library/binascii.html
 ```
 
-###  Python Built in Functions(內建的函數)
+步驟一:先將十六進位的數字轉成文字
+```
+import binascii
+binascii.unhexlify('6236343a20615735305a584a755a58526659323975646d567963326c76626c3930623239736331397962324e72')
+```
+步驟二:將獲得的文字再使用base 64解碼
+```
+import base64
+base64.b64decode('aW50ZXJuZXRfY29udmVyc2lvbl90b29sc19yb2Nr')
+```
+## Internetwache CTF 2016 : The hidden message
+```
+My friend really can’t remember passwords. So he uses some kind of obfuscation. Can you restore the plaintext?
+
+Attachment: misc50.zip
+```
+把misc50.zip解壓縮後可以得到:
+```
+0000000 126 062 126 163 142 103 102 153 142 062 065 154 111 121 157 113
+0000020 122 155 170 150 132 172 157 147 123 126 144 067 124 152 102 146
+0000040 115 107 065 154 130 062 116 150 142 154 071 172 144 104 102 167
+0000060 130 063 153 167 144 130 060 113 012
+0000071
+```
+
+```
+參考解答(writeups)
+https://0x90r00t.com/2016/02/22/internetwache-ctf-2016-misc-50-the-hidden-message-write-up/
+```
+### 數字系統( number system)的轉換
+```
+10進位(Decimal)  二進位(binary)  八進位(Octal)  十六進位(Hexadecimal)
+
+1011(二進位) = 13(八進位) = B(十六進位) = 11(十進位)
+
+Python表示法:
+0b1011(二進位:0b開頭)  0o13(八進位:0o開頭)   0xb(十六進位:0x開頭)
+```
+
+###  使用Python 內建函數(Built in Functions)解決  數字系統的轉換問題
 
 ```
 https://www.w3schools.com/python/python_ref_functions.asp
@@ -166,22 +217,33 @@ oct()
 int()
 hex()
 ```
-### 使用Python程式將10進位(Decimal)數字轉換成二進位(binary), 八進位(Octal) 及 十六進位(Hexadecimal) 數字系統( number system)
+```
+# 數字系統( number system)的轉換
+# 使用Python程式將10進位(Decimal)數字轉換成二進位(binary), 八進位(Octal) 及 十六進位(Hexadecimal) 
+# https://www.programiz.com/python-programming/examples/conversion-binary-octal-hexadecimal
 
-https://www.programiz.com/python-programming/examples/conversion-binary-octal-hexadecimal
-"""
+bin_n = 0b1011
 
-# Python program to convert decimal number into binary, octal and hexadecimal number system
-
-# Change this line for a different result
+print("上述二進位數字可被轉換成:")
+print(bin_n,"十進位(Decimal).")
+print(oct(bin_n),"八進位(octal).")
+print(hex(bin_n),"十六進位(hexadecimal).")
+```
+### 給你十進位的 344, 二進位(binary)|八進位(octal)|十六進位(hexadecimal)是多少?
+```
 dec = 344
 
 print("10進位數字",dec,"可被轉換成:")
 print(bin(dec),"二進位(binary).")
-print(oct(dec),"in octal.")
-print(hex(dec),"in hexadecimal.")
+print(oct(dec),"八進位(octal).")
+print(hex(dec),"十六進位(hexadecimal).")
+```
+### []
+```
 
-# From https://www.programiz.com/python-programming/methods/built-in/int
+```
+```
+# [參考資料]From https://www.programiz.com/python-programming/methods/built-in/int
 
 # binary 0b or 0B
 print("For 1010, int is:", int('1010', 2))
@@ -195,15 +257,7 @@ print("For 0o12, int is:", int('0o12', 8))
 print("For A, int is:", int('A', 16))
 print("For 0xA, int is:", int('0xA', 16))
 ```
-## Internetwache CTF 2016 : The hidden message
 
-```
-0000000 126 062 126 163 142 103 102 153 142 062 065 154 111 121 157 113
-0000020 122 155 170 150 132 172 157 147 123 126 144 067 124 152 102 146
-0000040 115 107 065 154 130 062 116 150 142 154 071 172 144 104 102 167
-0000060 130 063 153 167 144 130 060 113 012
-0000071
-```
 
 ## 第一種解法:使用線上工具解
 ```
