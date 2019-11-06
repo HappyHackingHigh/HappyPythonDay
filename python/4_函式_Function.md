@@ -69,7 +69,6 @@ print("num1 is", num1)
 print("num2 is", num2)
 ```
 ### [作業]:def sort(number1, number2, number3):
-```
 
 # 函式與參數
 
@@ -81,7 +80,6 @@ Keyword arguments關鍵字參數
 
 ### **arguments參數**的使用技巧
 ```
-
 #!/usr/bin/python 
 # -*- coding: UTF-8 -*- 
 
@@ -97,7 +95,7 @@ printArea(height = 6.2) # Default widht = 1
 ```
 
 ### [小小測驗]:執行下列程式並說明其結果"""
-
+```
 #!/usr/bin/python 
 # -*- coding: UTF-8 -*- 
 
@@ -117,16 +115,17 @@ hello_3(**params)
 ```
 
 ## collectiong parameters(任意數量的參數):* 與 **
-
+```
 如何撰寫擁有任意數量參數的函式:
-"""
-
+```
+```
 def print_params(*params): 
     print(params) 
 
 print_params('Testing') 
 
 print_params(1, 2, 3) 
+
 
 # return的是tuple資料型態
 
@@ -138,9 +137,9 @@ def print_params_2(title, *params):
 
 print_params_2('Params:', 1, 2, 3)
 print_params_2('Nothing:')
-
-# 撰寫擁有任意數量參數的函式且要支援關鍵字參數==>使用**
-
+```
+### 撰寫擁有任意數量參數的函式且要支援關鍵字參數==>使用**
+```
 def print_params_3(**params): 
     print(params) 
 
@@ -157,15 +156,16 @@ print_params_4(1, 2, 4, 5, 6, 7, foo=1, bar=2)
 
 print_params_4(1, 2)
 
-"""# 變數的有效範圍
-
+```
+# 變數的有效範圍
+```
 變數的有效範圍(Scope)：變數在程式可參考的範圍。
 
 區域變數(local variable):宣告在函式內部的變數
 
 全域變數(global variables):宣告在所有函式外部的變數
-"""
-
+```
+```
 x = 111
 
 def f1():
@@ -188,30 +188,9 @@ increase()
 increase()
 print(x)
 
-"""## 匿名函數==>lambda 運算式
 ```
-匿名函數==沒有函數名稱、臨時使用的小函數
-使用lambda 運算式來宣告匿名函數
-lambda 運算式只能包含一個運算式， 不允許複雜的語句，但運算式中可呼叫其他函數
-```
-"""
 
-#把lambda運算式當做函數
-
-f1 = lambda x, y, z: x+2*y+3*z
-print(f1(2,3,1))
-
-#在lambda 運算式中呼叫其他函式(重要技術)
-def myfunc(m):
-    return m*m
-
-my_list = [1, 3, 5, 7, 9]
-
-#使用python的map()
-map(lambda x:myfunc(x), my_list)
-
-"""# 遞迴函式 ==> recursive vs iterative(loop)
-
+# 遞迴函式 ==> recursive vs iterative(loop)
 
 ```
 [程式開發作業]費氏數列
@@ -238,8 +217,7 @@ F(n) = F(n-1)+ F(n-2)(n=>2)
 ```
 
 #### 方法一:使用 recursive
-"""
-
+```
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
@@ -249,9 +227,9 @@ def fib(n):
     return fib(n-1)+fib(n-2)
 
 print(fib(10))
-
-"""#### 方法二:使用 iterative"""
-
+```
+#### 方法二:使用 iterative"""
+```
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
  
@@ -261,10 +239,9 @@ def fib(n):
         a,b = b,a+b
     return a
  
-
 print(fib(10))
-
-"""###【Python 練習實例28】
+```
+###【Python 練習實例28】
 
 ```
 有5個人坐在一起，
