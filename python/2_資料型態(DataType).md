@@ -106,9 +106,7 @@ https://www.w3schools.com/python/python_operators.asp
 ```
 -3%2
 ```
-```
 
-```
 ```
 a = 7//2
 b = 7.0//2
