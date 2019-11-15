@@ -2,6 +2,7 @@
 ```
 無痛快速掌握PYTHON程式技術
 全程使用GOOGLE COLAB開發環境
+從實戰入門到學會PYTHON
 
 HappyPythonDay 
 Python程式與資訊安全實戰
