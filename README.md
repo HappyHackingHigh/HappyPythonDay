@@ -1,16 +1,42 @@
 # HappyPythonDay
 ```
+無痛快速長握PYTHON程式技術
+全程使用GOOGLE COLAB開發環境
+
 HappyPythonDay 
 Python程式與資訊安全實戰
 ```
-## 課程內容[6小時課程]
+## 搭配平台
+```
+HAPPYPyThon-CTF
+
+編碼與解碼 101 +102
+crypto 101+102
+PPC professional programming code
+    基礎 10    進階 10
+```
+
+## 課程內容[6小時課程]: HAPPYPythonDay--BASIC 
 ```
 [A].使用Google Colab平台開發python程式
 [B].Python程式語法學習
 
+PYTHON*資安應用
 [C].Python編碼與解碼實戰
 [D].Python古典密碼實戰
-[E*].Python現代密碼實戰
+```
+
+## 課程內容[6小時課程]: HAPPYPythonDay--advance
+```
+[A].使用Linux平台開發python程式
+[B].Python程式:物件導向與檔案存取
+
+PYTHON*資安應用II
+[E].Python現代密碼實戰
+
+[F*]PPC professional programming code
+    基礎 10
+    進階 10
 ```
 # PART I: Life is short, Use Python
 
