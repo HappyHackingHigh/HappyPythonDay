@@ -1,6 +1,6 @@
 # HappyPythonDay
 ```
-無痛快速長握PYTHON程式技術
+無痛快速掌握PYTHON程式技術
 全程使用GOOGLE COLAB開發環境
 
 HappyPythonDay 
